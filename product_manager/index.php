@@ -51,5 +51,7 @@ if ($action == 'list_products') {
         add_product($category_id, $code, $name, $price);
         header("Location: .?category_id=$category_id");
     }
-}    
+} else if ($action == 'list_categories'){
+    include('category_list.php');
+}   
 ?>
