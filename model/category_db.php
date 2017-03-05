@@ -30,4 +30,17 @@ function delete_category_name($category_id){
     $success = $statement->execute();
     $statement->closeCursor();    
 }
+
+function add_category_name($category_id, $category_name){
+    global $db;
+    $query = 'INSERT INTO categories_guitar_shop1
+                 (categoryID, categoryName)
+              VALUES
+                 (:categoryId, :category)';
+    $statement = $db->prepare($query);
+    $statement->bindValue(':category', $category);
+    $statement->bindValue(':categoryId', $categoryId);
+    $statement->execute();
+    $statement->closeCursor();
+}
 ?>
