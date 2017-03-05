@@ -38,8 +38,8 @@ function add_category_name($category_id, $category_name){
               VALUES
                  (:categoryId, :category)';
     $statement = $db->prepare($query);
-    $statement->bindValue(':category', $category);
-    $statement->bindValue(':categoryId', $categoryId);
+    $statement->bindValue(':category', $category_name);
+    $statement->bindValue(':categoryId', $category_id);
     $statement->execute();
     $statement->closeCursor();
 }
