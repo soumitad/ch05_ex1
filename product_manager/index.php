@@ -54,5 +54,16 @@ if ($action == 'list_products') {
 } else if ($action == 'list_categories'){
     $categories = get_categories();
     include('category_list.php');
+} else if ($action == 'delete_category_name'){
+    $category_id = filter_input(INPUT_POST, 'category_id', 
+            FILTER_VALIDATE_INT);
+    $categories = delete_category_name($category_id);
+    include('category_list.php');
+} else if ($action == 'add_category_name'){
+    $category_id = filter_input(INPUT_POST, 'categoryId', 
+            FILTER_VALIDATE_INT);
+    $category_name = filter_input(INPUT_POST, 'category');
+    $categories = add_category_name($category_id, $category_name);
+    include('category_list.php');
 }   
 ?>
