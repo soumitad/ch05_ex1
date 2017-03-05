@@ -8,6 +8,14 @@
             <th>&nbsp;</th>
         </tr>        
         <!-- add category rows here -->
+        <?php foreach($categories as $category) : ?>
+                <tr>
+                    <td>
+                        <?php echo $category['categoryName']; ?>
+                    </td>   
+                    
+                </tr>
+                <?php endforeach; ?>
     </table>
 
     <h2>Add Category</h2>
