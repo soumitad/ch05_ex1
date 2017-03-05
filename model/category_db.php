@@ -20,4 +20,14 @@ function get_category_name($category_id) {
     $category_name = $category['categoryName'];
     return $category_name;
 }
+
+function delete_category_name($category_id){
+    global $db;
+    $query = 'DELETE FROM categories_guitar_shop1
+              WHERE categoryID = :category_id';
+    $statement = $db->prepare($query);
+    $statement->bindValue(':category_id', $category_id);
+    $success = $statement->execute();
+    $statement->closeCursor();    
+}
 ?>

@@ -12,7 +12,15 @@
                 <tr>
                     <td>
                         <?php echo $category['categoryName']; ?>
-                    </td>   
+                    </td> 
+                    <td><form action="." method="post">
+                         <input type="hidden" name="action"
+                           value="delete_category_name">
+                        <input type="hidden" name="category_id"
+                           value="<?php echo $product['categoryID']; ?>">
+                    <input type="submit" value="Delete">
+                        </form>
+                    </td>  
                     
                 </tr>
                 <?php endforeach; ?>
