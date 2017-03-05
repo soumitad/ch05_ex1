@@ -13,7 +13,7 @@
                     <td>
                         <?php echo $category['categoryName']; ?>
                     </td> 
-                    <td><form action="." method="post">
+                    <td><form action="index.php" method="post" id="delete_category_name">
                          <input type="hidden" name="action"
                            value="delete_category_name">
                         <input type="hidden" name="category_id"
@@ -28,7 +28,7 @@
 
     <h2>Add Category</h2>
     <!-- add code for form here -->
-    <form action="." method="post">
+    <form action="index.php" method="post" id="add_category_name">
             <input type="hidden" name="action"
                            value="add_category_name">
             <label>CategoryId:</label>
